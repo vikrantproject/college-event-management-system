@@ -1,0 +1,108 @@
+{
+  "theme": "light",
+  "archetype": "4 (Swiss & High-Contrast)",
+  "typography": {
+    "fonts": {
+      "headings": "Work Sans",
+      "body": "IBM Plex Sans",
+      "mono": "JetBrains Mono"
+    },
+    "rules": {
+      "headings": "tracking-tight leading-none text-foreground font-semibold",
+      "body": "tracking-normal leading-relaxed text-muted-foreground",
+      "h1": "text-4xl sm:text-5xl lg:text-6xl",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl",
+      "h3": "text-xl sm:text-2xl",
+      "h4": "text-lg sm:text-xl",
+      "overlines": "uppercase text-xs tracking-[0.2em] font-bold text-muted-foreground"
+    }
+  },
+  "colors": {
+    "strategy": "Swiss High-Contrast: stark backgrounds, strong structural gray borders, and International Klein Blue for high-authority actions.",
+    "background": "#F9FAFB",
+    "foreground": "#111827",
+    "card": "#FFFFFF",
+    "card_foreground": "#111827",
+    "primary": "#002FA7",
+    "primary_foreground": "#FFFFFF",
+    "secondary": "#FFFFFF",
+    "secondary_foreground": "#111827",
+    "muted": "#F3F4F6",
+    "muted_foreground": "#4B5563",
+    "accent": "#F3F4F6",
+    "accent_foreground": "#111827",
+    "destructive": "#FF3333",
+    "destructive_foreground": "#FFFFFF",
+    "border": "#E5E7EB",
+    "input": "#E5E7EB",
+    "ring": "#002FA7"
+  },
+  "layout_and_spacing": {
+    "spacing_scale": "p-1, p-2, p-4, p-6, p-8, p-12, p-16",
+    "dashboard_grid": "grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+    "general_grid_rules": "Grid items must be direct children. Override default stretch with align-items: start where necessary.",
+    "border_radius": "max 8px (rounded-md). Do not use fully rounded pill shapes.",
+    "container_padding": "Containers with borders must have internal padding (p-6 or p-8) to prevent text collision."
+  },
+  "surfaces": {
+    "header": "Crystal Glass: bg-white/70 backdrop-blur-xl border-b border-gray-200 shadow-sm.",
+    "dashboard_cards": "Solid white background, 1px subtle border, no shadow. Hover: -translate-y-1 shadow-md border-gray-300 transition-all.",
+    "event_cards": "Flat background, 1px subtle border. Image on top (max-h-48 object-cover). Card body p-6."
+  },
+  "components_instructions": {
+    "navigation": "Header must have visible brand name, 3-5 links, primary CTA. Sticky positioning with z-50.",
+    "tables": "Use Shadcn Table. Implement sortable columns, inline action dropdowns, and pagination. Use clean horizontal borders.",
+    "forms": "Use Shadcn Form, Input, Select. Never use native inputs directly. Add crisp focus rings.",
+    "buttons": "Primary: bg-[#002FA7] text-white hover:bg-blue-800. Secondary: bg-white text-gray-900 border border-gray-300 hover:bg-gray-50.",
+    "notifications": "Use Sonner for toast notifications. Success alerts on registration."
+  },
+  "motion_and_interaction": {
+    "hover_states": "Always explicitly set text color on hover. Example: hover:bg-gray-100 hover:text-gray-900",
+    "focus_states": "High contrast ring. focus:ring-2 focus:ring-[#002FA7] focus:ring-offset-1 focus:outline-none",
+    "transitions": "Use specific properties: transition-transform duration-200 ease-out, transition-colors duration-200 ease-out"
+  },
+  "testing": {
+    "rules": "All interactive and key informational elements MUST include a data-testid attribute in kebab-case based on role (e.g., data-testid='event-register-button', data-testid='admin-create-event-submit')."
+  },
+  "media": {
+    "icons": "lucide-react",
+    "image_urls": [
+      {
+        "category": "hero_event_default",
+        "url": "https://images.unsplash.com/photo-1757143090778-311db757078d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwzfHxjb2xsZWdlJTIwc3R1ZGVudHMlMjBjYW1wdXMlMjBldmVudHxlbnwwfHx8fDE3NzQ1MjUwOTJ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Large group of people outdoors (community event)",
+        "placement_instructions": "Use as default image for generic college events if admin doesn't upload one."
+      },
+      {
+        "category": "hackathon_tech_event",
+        "url": "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Code on laptop screen, dark backdrop",
+        "placement_instructions": "Use as an example event image for 'Tech Hackathon' or similar events."
+      },
+      {
+        "category": "student_community",
+        "url": "https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Group of college students walking together",
+        "placement_instructions": "Use for dashboard welcome section or user onboarding."
+      },
+      {
+        "category": "campus_scenic",
+        "url": "https://images.pexels.com/photos/5604180/pexels-photo-5604180.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Scenic view of campus buildings and students",
+        "placement_instructions": "Use for login/signup page background or main landing portal."
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Install dependencies: lucide-react, sonner, react-router-dom, and shadcn components.",
+    "Override default tailwind configuration to use the Swiss High-Contrast colors provided.",
+    "Implement the UI using .js (JSX) files, NOT .tsx files.",
+    "The application is a 'Control Room' dashboard app type. Do not use generic floating cards everywhere; anchor sections with crisp borders.",
+    "Implement JWT-based auth with clear admin/student separation.",
+    "Build the Event Management table in the Admin dashboard with pagination, search, and action menus.",
+    "For the User dashboard, build an 'Event Cards Grid' for browsing and registering.",
+    "Show success alerts using Sonner when an event registration is completed.",
+    "Apply 'data-testid' to ALL buttons, links, inputs, and key text nodes to ensure testing works smoothly.",
+    "NEVER use placeholder text (like 'Lorem Ipsum') or dummy image URLs. Only use the provided media URLs."
+  ]
+}
