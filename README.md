@@ -117,7 +117,7 @@ college-event-management-system/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/vikrant-project/college-event-management-system.git
+git clone https://github.com/vikrantproject/college-event-management-system.git
 cd college-event-management-system
 ```
 
